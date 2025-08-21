@@ -34,14 +34,12 @@ def test_evaluate_model():
     # Test 3: Check that metric values are floats between 0 and 1
     for metric_name, value in metrics.items():
         assert isinstance(value, float)
-        assert 0.0 <= value <= 1.0```
+        assert 0.0 <= value <= 1.0
 
----
 
-#### **File: `tests/test_utils.py`**
-*(This file tests the utility functions from `src/utils.py`.)*
 
-```python
+
+
 import pytest
 import yaml
 import os

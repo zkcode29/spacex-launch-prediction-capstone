@@ -20,7 +20,7 @@ DecisionTree:
 RandomForest:
   n_estimators: [100, 200, 300]
   # Corrected: 'auto' is deprecated and has been replaced by 'sqrt'.
-  # For simplicity, we will just use 'sqrt' and 'log2'.
+  # For simplicity, I will just use 'sqrt' and 'log2'.
   max_features: ['sqrt', 'log2']
   # 'null' is replaced by leaving it blank
   max_depth: [10, 20, 30, ]

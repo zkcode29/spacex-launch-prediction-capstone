@@ -11,7 +11,7 @@ import requests
 from datetime import datetime, timedelta
 import numpy as np
 
-# --- 1. Initialize Professional App ---
+# --- 1. Initialize  App ---
 app = dash.Dash(
     __name__, 
     external_stylesheets=[
@@ -21,7 +21,7 @@ app = dash.Dash(
 )
 server = app.server
 
-# Professional CSS Styling
+#  CSS Styling
 app.index_string = '''
 <!DOCTYPE html>
 <html>
@@ -120,7 +120,7 @@ app.index_string = '''
 # --- 2. Data Loading ---
 def load_and_prepare_data():
     """Load and prepare SpaceX data"""
-    # Sample professional data
+    # Sample  data
     np.random.seed(42)
     
     # Realistic launch sites
@@ -132,7 +132,7 @@ def load_and_prepare_data():
     }
     
     sample_data = {
-        'class': np.random.choice([0, 1], size=150, p=[0.12, 0.88]),  # 88% success rate
+        'class': np.random.choice([0, 1], size=150, p=[0.12, 0.88]),  
         'LaunchSite': np.random.choice(list(launch_sites.keys()), size=150),
         'PayloadMass': np.random.normal(8000, 3500, 150).clip(500, 22000),
         'Orbit': np.random.choice(['LEO', 'GTO', 'SSO', 'ISS', 'GEO', 'MEO'], 
@@ -167,7 +167,7 @@ booster_options = [{'label': 'All Booster Versions', 'value': 'ALL'}] + \
 orbit_options = [{'label': 'All Target Orbits', 'value': 'ALL'}] + \
                 [{'label': orbit, 'value': orbit} for orbit in sorted(df['Orbit'].unique())]
 
-# --- 3. Professional Layout ---
+# --- 3.  Layout ---
 def create_metric_card(title, value, change=None):
     """Create professional metric card"""
     return html.Div([
@@ -177,7 +177,7 @@ def create_metric_card(title, value, change=None):
     ], className="metric-card")
 
 app.layout = dbc.Container([
-    # Professional Header
+    #  Header
     dbc.Row([
         dbc.Col([
             html.Div([
@@ -375,7 +375,7 @@ app.layout = dbc.Container([
     
 ], fluid=True, style={'max-width': '1400px'})
 
-# --- 4. Professional Chart Callbacks ---
+# --- 4.  Chart Callbacks ---
 @app.callback(
     [Output('success-pie-chart', 'figure'),
      Output('payload-scatter-plot', 'figure'),
@@ -416,7 +416,7 @@ def update_dashboard(selected_site, selected_booster, selected_orbit,
     if selected_orbit != 'ALL':
         filtered_df = filtered_df[filtered_df['Orbit'] == selected_orbit]
     
-    # 1. Professional Pie Chart
+    # 1.  Pie Chart
     if not filtered_df.empty:
         success_counts = filtered_df['Launch Outcome'].value_counts()
         pie_fig = go.Figure(data=[go.Pie(
@@ -448,7 +448,7 @@ def update_dashboard(selected_site, selected_booster, selected_orbit,
                               x=0.5, y=0.5, showarrow=False, font=dict(size=16, color='#718096'))
         pie_fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
     
-    # 2. Professional Scatter Plot
+    # 2.  Scatter Plot
     scatter_fig = px.scatter(
         filtered_df, x='PayloadMass', y='Orbit', 
         color='Launch Outcome',
@@ -466,7 +466,7 @@ def update_dashboard(selected_site, selected_booster, selected_orbit,
         legend=dict(title="Mission Outcome")
     )
     
-    # 3. Professional Timeline
+    # 3. Timeline
     monthly_data = filtered_df.groupby([
         filtered_df['Date'].dt.to_period('M'), 'Launch Outcome'
     ]).size().unstack(fill_value=0)

@@ -31,15 +31,15 @@ def clean_api_data(df: pd.DataFrame) -> pd.DataFrame:
             return payload_map.get(p_ids[0], {}).get(key)
         return None
     
-    # --- START OF THE FINAL FIX ---
-    # The 'launchpad' column is a dictionary. We need to extract the 'id' from it.
+   
+    # The 'launchpad' column is a dictionary. I need to extract the 'id' from it.
     def get_launchpad_id(x):
         if isinstance(x, dict):
             return x.get('id')
         return None # Return None if it's not a dictionary
     
     data['LaunchSite'] = data['launchpad'].apply(get_launchpad_id)
-    # --- END OF THE FINAL FIX ---
+   
 
     data['BoosterVersion'] = data['name']
     data['PayloadMass'] = data['payloads'].apply(lambda x: get_payload_info(x, 'mass_kg'))

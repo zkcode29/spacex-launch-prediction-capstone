@@ -16,8 +16,8 @@ def scrape_launch_data(wiki_url="https://en.wikipedia.org/wiki/List_of_Falcon_9_
         # pandas.read_html is a powerful tool for scraping tables from web pages
         tables = pd.read_html(wiki_url)
         
-        # We need to find the correct tables that contain the launch records.
-        # We will combine all tables that have a "Flight No." column.
+        # I need to find the correct tables that contain the launch records.
+        # I will combine all tables that have a "Flight No." column.
         launch_df = pd.concat(
             [table for table in tables if "Flight No." in table.columns or "Flight\nNo." in table.columns],
             ignore_index=True
