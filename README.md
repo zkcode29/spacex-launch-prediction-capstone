@@ -5,6 +5,13 @@
 > A comprehensive, end-to-end data science capstone project that predicts the landing success of a SpaceX Falcon 9 first stage. This project covers the entire data science lifecycle, from data collection and cleaning to model training and the deployment of a fully interactive dashboard.
 
 ---
+<img width="1038" height="481" alt="image" src="https://github.com/user-attachments/assets/0732c69f-cfec-48d6-8f1c-bb0af32de725" />
+<img width="1038" height="421" alt="image" src="https://github.com/user-attachments/assets/dd6e2c2d-4f90-419a-9f48-6d7e5073b8e2" />
+<img width="1038" height="443" alt="image" src="https://github.com/user-attachments/assets/ab4a433b-340f-4bc2-b9db-f25c21a73359" />
+<img width="1038" height="527" alt="image" src="https://github.com/user-attachments/assets/e2e9ffc0-b351-4bab-bff0-b119a2f87b05" />
+
+
+
 
 ### Project Overview
 
