@@ -1,37 +1,12 @@
-Of course. I will take the excellent content you have already written and reformat it into a single, beautiful, and professional-looking README.md file using advanced Markdown.
 
-I will not change any of your text. I will only enhance the presentation with better spacing, icons, blockquotes, and other visual elements.
 
-Instructions
-
-Go to your GitHub repository for the project.
-
-Click on the pencil icon on your README.md file to edit it.
-
-Delete everything currently in the file.
-
-Copy the entire block of code below, starting from the first line.
-
-Paste it into the empty README.md editor on GitHub.
-
-Click the "Preview" tab to see how great it looks.
-
-Commit the changes.
-
-The Beautiful README.md File (Copy Everything Below)
-code
-Markdown
-download
-content_copy
-expand_less
-
-# 🚀 SpaceX Falcon 9 First Stage Landing Prediction 🚀
+# SpaceX Falcon 9 First Stage Landing Prediction 
 
 > A comprehensive, end-to-end data science capstone project that predicts the landing success of a SpaceX Falcon 9 first stage. This project covers the entire data science lifecycle, from data collection and cleaning to model training and the deployment of a fully interactive dashboard.
 
 ---
 
-### 📋 Project Overview
+### Project Overview
 
 The cost of a Falcon 9 launch is significantly reduced by SpaceX's ability to reuse the first stage. This project leverages public data to build a machine learning model that predicts landing outcomes, which can help in estimating the operational cost and risk of a launch.
 
@@ -42,33 +17,28 @@ The cost of a Falcon 9 launch is significantly reduced by SpaceX's ability to re
 
 ---
 
-### 📂 Project Structure
+###  Project Structure
 
 The repository is organized into a modular and reproducible structure, following best practices for data science projects.
-
+```
 spacex-landing-capstone/
-├── 📁 app/ # Plotly Dash application
-├── 📁 config/ # Configuration files (paths, parameters)
-├── 📁 data/ # Raw, interim, and processed data
-├── 📁 docs/ # Project documentation and reports
-├── 📁 models/ # Saved trained models
-├── 📁 notebooks/ # Jupyter notebooks for analysis (01 to 06)
-├── 📁 requirements/ # Python dependency files
-├── 📁 scripts/ # Automation shell scripts
-├── 📁 src/ # Reusable Python source code
-├── 📁 sql/ # SQL queries
-└── 📁 tests/ # Unit tests for the source code
+├── app/ Plotly Dash application
+├── config/ Configuration files (paths, parameters)
+├── data/ Raw, interim, and processed data
+├── docs/ Project documentation and reports
+├── models/ Saved trained models
+├── notebooks/ Jupyter notebooks for analysis (01 to 06)
+├── requirements/ Python dependency files
+├── scripts/ Automation shell scripts
+├── src/ Reusable Python source code
+├── sql/ SQL queries
+└── tests/ Unit tests for the source code
 
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
----
+```
 
-### 🛠️ Tech Stack
+
+
+### Tech Stack
 
 This project utilizes a modern, industry-standard data science toolkit:
 
@@ -85,81 +55,78 @@ This project utilizes a modern, industry-standard data science toolkit:
 
 ---
 
-### 🏁 Getting Started
 
-Follow these instructions to set up and run the project locally.
+ ## Getting Started & Running the Project
 
-#### Prerequisites
-- Python 3.8 or higher
-- A virtual environment tool (like `venv`)
+Follow these steps to get the project running on your local machine.
 
-#### 1. Clone the Repository
-```bash
+## Step 1: Clone the Repository
+
+First, clone the project to your computer using Git.
+```
 git clone https://github.com/zkcode29/spacex-launch-prediction-capstone.git
-cd spacex-launch-prediction-capstone
-2. Set Up the Environment & Install Dependencies
+cd spacex-landing-capstone
+```
+## Step 2: Set Up the Environment & Install Dependencies
 
-This project uses a Makefile for easy setup.
+This project uses a virtual environment to manage its libraries. Choose the instructions for your operating system.
 
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+**On Windows (using PowerShell):**
+```
+# 1. Create the virtual environment
+python -m venv venv
+
+# 2. Allow activation scripts to run for this session
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+# 3. Activate the environment
+.\venv\Scripts\Activate.ps1
+
+# 4. Install all required libraries
+pip install -r requirements/dev.txt
+```
+
+
+**On macOS / Linux (using Terminal):**
+```
+# The Makefile automates this entire process
 make setup
 
-This command will create a venv folder and install all necessary packages.
-
-3. Activate the Virtual Environment
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+# If you don't use make, you must activate the environment manually
 source venv/bin/activate
+```
+## Step 3: Run the Data Collection Pipeline
+Next, run the scripts that fetch the raw data from the internet.
 
-(On Windows, use: venv\Scripts\activate)
-
-⚙️ Running the Pipeline
-1. Collect the Data
-
-Run the data collection scripts to populate the data/raw/ directory.
-
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+**On Windows (using PowerShell):**
+```
+python src/fetch_api.py
+python src/scrape_wiki.py
+```
+**On macOS / Linux (using Terminal):**
+```
 make data
-2. Execute the Jupyter Notebooks
+```
+This will populate the data/raw/ directory with the necessary files.
+## Step 4: Execute the Jupyter Notebooks
 
-Open the notebooks/ directory and run the notebooks in sequential order, from 01_data_collection.ipynb to 06_final_analysis.ipynb. This will perform the cleaning, analysis, and model training.
+The core analysis and model training is done in Jupyter Notebooks.
+1.  Open the `notebooks/` directory in your code editor (like VS Code).
+2.  Run the notebooks in sequential order, from `01_data_collection.ipynb` to `06_final_analysis.ipynb`.
+3.  This will clean the data, perform the analysis, train the models, and save the best one.
 
-✨ Launching the Dashboard
+## Step 5: Launch the Interactive Dashboard
 
-To view the final interactive dashboard, run the following command:
+Finally, launch the web application to see the results.
 
-code
-Bash
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+**On Windows (using PowerShell):**
+```
+python app/dashboard.py
+```
+**On macOS / Linux (using Terminal):**
+```
 make app
+```
+After running the command, open your web browser and navigate to the following address to view your live dashboard:
 
-Then, open your web browser and navigate to http://127.0.0.1:8050.
-
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
+http://127.0.0.1:8050
