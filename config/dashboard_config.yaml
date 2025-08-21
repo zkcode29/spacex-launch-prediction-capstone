@@ -1,0 +1,16 @@
+# Configuration settings for the Plotly Dash dashboard
+
+dashboard:
+  title: "SpaceX Landing Prediction Dashboard"
+  server:
+    host: "127.0.0.1"
+    port: 8050
+    debug_mode: True
+
+components:
+  pie_chart:
+    title: "Total Launch Success Rate"
+  scatter_plot:
+    title: "Payload Mass vs. Launch Outcome"
+    x_axis: "PayloadMass"
+    y_axis: "class"

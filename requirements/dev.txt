@@ -1,0 +1,14 @@
+# Include all base requirements
+-r base.txt
+
+# Code Formatting & Linting
+black
+flake8
+
+# Testing
+pytest
+pytest-cov
+
+# Notebooks (already in base, but good to be explicit for dev)
+notebook
+jupyterlab

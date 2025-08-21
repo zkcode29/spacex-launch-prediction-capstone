@@ -1,0 +1,15 @@
+/* Custom CSS for the SpaceX Dashboard */
+
+/* Example: Change the background color */
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Example: Style the main title */
+h1 {
+    color: #1a1a1a;
+    text-align: center;
+    margin-top: 20px;
+}

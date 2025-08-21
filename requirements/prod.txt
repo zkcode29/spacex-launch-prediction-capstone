@@ -1,0 +1,11 @@
+# Core libraries for the app to run
+pandas
+numpy
+scikit-learn
+joblib
+plotly
+dash
+PyYAML
+
+# A production-grade web server for Dash apps
+gunicorn

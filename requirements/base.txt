@@ -1,0 +1,29 @@
+# Data Manipulation & Scientific Computing
+pandas
+numpy
+
+# Data Collection
+requests
+beautifulsoup4
+lxml
+
+# Data Visualization
+matplotlib
+seaborn
+plotly
+
+# Geospatial Visualization
+folium
+
+# Machine Learning
+scikit-learn
+joblib
+
+# SQL in Python
+sqlalchemy
+
+# Dashboarding
+dash
+
+# Configuration File Reading
+PyYAML
